@@ -1,0 +1,79 @@
+
+#wholeBox {
+    
+    background-color: aqua;
+    height: 90%;
+
+}
+
+.nameLeft {
+    position: center;
+    font-weight: 400;
+    font-size: large;
+}
+
+#scoreTable {
+
+    table-layout: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid;
+    border-collapse: collapse;
+    height:fit-content;
+}
+
+tr {
+    height: 10vh;
+}
+td {
+    border: 2px solid;
+    border-color: black;
+}
+
+.icons {
+    
+    width: 20%;
+    height: 10vh;
+}
+
+img.icons  {
+    display: flex;
+    border-bottom: none;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    resize: both;
+    max-width: 100%;
+    
+  }
+
+
+.finalScores {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 40px;
+}
+
+input {
+    max-width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    outline: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .icons {
+      margin: 0 0 auto;
+      padding: 0px;
+  }

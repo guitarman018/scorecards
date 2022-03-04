@@ -1,0 +1,77 @@
+
+#wholeBox {
+    
+    background-color: aqua;
+    height: 90%;
+    box-sizing: border-box;
+    
+
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+div {
+    border: 2px solid black;
+}
+
+.nameLeft {
+    position: center;
+    font-weight: 400;
+    font-size: large;
+}
+
+.icons {
+    width: 7%;
+    display: flex;
+    border-bottom: none;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.noStretch {
+    display: flex;
+    border-bottom: none;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    resize: both;
+    
+  }
+
+
+.finalScores {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 40px;
+}
+
+input {
+    max-width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    outline: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .icons {
+      margin: 0 0 auto;
+      padding: 0px;
+  }

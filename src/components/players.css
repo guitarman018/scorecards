@@ -1,0 +1,45 @@
+.hide {
+    visibility: hidden;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents {
+    display: block;
+
+    margin: auto;
+}
+
+.numPlayers {
+    margin: auto;
+    width: 100%;
+
+}
+
+.numPlayers {
+    display: flex;
+    justify-content: center;
+}
+.inputPlayers {
+    display: flex;
+    justify-content: center;
+}
+.buttonDiv {
+    width:fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#btnGo {
+    margin-left: 20px;
+}
+#wrong {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
