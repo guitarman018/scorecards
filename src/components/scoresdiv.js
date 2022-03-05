@@ -85,7 +85,7 @@ export default function ScoresDiv() {
         for (let i = 1; i <= players; i++) {
             let cellId = `cell${i}-row${rowNum}`
             let inputId = cellId + "-input"
-            cells.push(<div className="innerDiv" style={{backgroundColor: color}} key={cellId} id={cellId}><input type="number" autoComplete="new-password" id={inputId} onChange={update} style={{maxWidth: "100%"}} /></div>)
+            cells.push(<div className="innerDiv" style={{backgroundColor: color}} key={cellId} id={cellId}><input type="number" className="scoreInput" autoComplete="new-password" id={inputId} onChange={update} style={{maxWidth: "100%"}} /></div>)
         }
         return cells
     }
@@ -120,7 +120,7 @@ export default function ScoresDiv() {
     return(
         <div id="wholePage">
             <div className="board">
-                <div style={{textAlign: "center", fontFamily: "sans-serif", width: "17%", display: "flex", justifyContent: "center", fontSize: '3vw'}}>
+                <div style={{border: "2px solid black", textAlign: "center", fontFamily: "sans-serif", width: "17%", display: "flex", justifyContent: "center", fontSize: '3vw'}}>
                     <p style={{margin: "auto 0"}}>Names:</p>
                 </div>
                 <div className="cellsContainer">{buildNames()}</div>

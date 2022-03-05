@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .hide {
     visibility: hidden;
 }
@@ -6,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .contents {
@@ -15,18 +22,22 @@
 }
 
 .numPlayers {
-    margin: auto;
+    margin: 0 auto;
+    height: 5vh;
     width: 100%;
-
-}
-
-.numPlayers {
     display: flex;
     justify-content: center;
+}
+h2 {
+    margin: auto 0;
 }
 .inputPlayers {
     display: flex;
     justify-content: center;
+}
+#numPlayersInput {
+    width: 10vw;
+    border: 2px solid black;
 }
 .buttonDiv {
     width:fit-content;
