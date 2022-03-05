@@ -21,8 +21,8 @@ div {
     border: 2px solid black;
 }
 
-.textNames {
-    font-size: 4em;
+.textName {
+    font-size: 2vw;
 }
 
 .cellsContainer {
@@ -40,15 +40,9 @@ div {
     vertical-align: middle;
 }
 
-.nameLeft {
-    position: center;
-    font-weight: 400;
-    font-size: large;
-}
-
 .finalScores {
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: 40px;
+    font-size: 4vw;
     border: 2px solid black;
 }
 
@@ -60,7 +54,7 @@ input {
     text-align: center;
     font-family: 'Nanum Gothic', sans-serif;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 3vw;
     outline: none;
   }
 

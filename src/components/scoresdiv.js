@@ -13,7 +13,7 @@ import sum from "../images/8-sum.jpg"
 
 export default function ScoresDiv() {
 
-    let players = 7
+    let players = 6
 
     const [playerScores, setPlayerScores] = useState(Array(players).fill(0).map(row => new Array(7).fill(0)))
     const [playerTotals, setPlayerTotals] = useState(Array(players).fill(0))
@@ -120,7 +120,7 @@ export default function ScoresDiv() {
     return(
         <div id="wholePage">
             <div className="board">
-                <div style={{textAlign: "center", fontFamily: "sans-serif", width: "17%", display: "flex", justifyContent: "center", fontSize: '1.5rem'}}>
+                <div style={{textAlign: "center", fontFamily: "sans-serif", width: "17%", display: "flex", justifyContent: "center", fontSize: '3vw'}}>
                     <p style={{margin: "auto 0"}}>Names:</p>
                 </div>
                 <div className="cellsContainer">{buildNames()}</div>
