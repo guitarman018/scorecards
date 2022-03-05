@@ -1,15 +1,16 @@
-
-#wholeBox {
-    
-    background-color: aqua;
-    height: 90%;
+* {
     box-sizing: border-box;
-    
+    margin: 0px;
+    padding: 0px;
+}
 
+body {
+    margin: 10px;
 }
 
 .board {
     display: flex;
+    height: 10vh;
     flex-wrap: wrap;
     align-items: stretch;
     flex-direction: row;
@@ -19,34 +20,26 @@ div {
     border: 2px solid black;
 }
 
+.cellsContainer {
+    width: 83%;
+    border: 1px solid black;
+    display: table;
+    table-layout: fixed;
+    
+
+}
+
+.innerDiv {
+    border: 1px solid rgb(87, 87, 87);
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .nameLeft {
     position: center;
     font-weight: 400;
     font-size: large;
 }
-
-.icons {
-    width: 7%;
-    display: flex;
-    border-bottom: none;
-    box-sizing: border-box;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-}
-
-.noStretch {
-    display: flex;
-    border-bottom: none;
-    box-sizing: border-box;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    flex: 0 0 auto;
-    resize: both;
-    
-  }
-
 
 .finalScores {
     font-family: 'Nanum Gothic', sans-serif;
@@ -72,6 +65,23 @@ input {
   }
 
   .icons {
-      margin: 0 0 auto;
-      padding: 0px;
-  }
+    width: 17%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.iconsNoStretch {
+    width: 17%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 10vh;
+    text-align: center;
+}
+.noStretch {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    
+    }
