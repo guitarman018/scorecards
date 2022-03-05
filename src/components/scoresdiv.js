@@ -42,7 +42,11 @@ export default function ScoresDiv() {
         let copy = playerScores
         if(e.target.value >= 0){
             copy[rowGet-1][colGet-1] = parseInt(e.target.value)
-        }
+            console.log(`value is ${parseInt(e.target.value)}`)
+        } else if (e.target.value < 0){
+            copy[rowGet-1][colGet-1] = parseInt(e.target.value)
+            console.log(`value is ${parseInt(e.target.value)}`)
+        } 
         setPlayerScores(copy)
         
         
@@ -57,7 +61,7 @@ export default function ScoresDiv() {
                 } else if(playerScores[i][j] <= 0 && playerScores[i][j] != "") {
                     playerSum += playerScores[i][j]
                 }
-                console.log(`reading: ${playerScores[i][j]}`)
+                // console.log(`reading: ${playerScores[i][j]}`)
 
             }
             newTotals[i] = playerSum
@@ -71,7 +75,7 @@ export default function ScoresDiv() {
     function buildNames() {
         let playerCells = []
         for (let i = 1; i <= players; i++) {
-            playerCells.push(<div className="nameLeft"><input type="text" style={{fontSize: 16, fontFamily: "sans-serif"}} /></div>)
+            playerCells.push(<div className="innerDiv"><input type="text" className="textName" autoComplete="new-password"/></div>)
         }  
         return playerCells
     }
@@ -81,7 +85,7 @@ export default function ScoresDiv() {
         for (let i = 1; i <= players; i++) {
             let cellId = `cell${i}-row${rowNum}`
             let inputId = cellId + "-input"
-            cells.push(<div className="innerDiv" style={{backgroundColor: color}} key={cellId} id={cellId}><input type="number" min="-100" id={inputId} onChange={update} style={{maxWidth: "100%"}} /></div>)
+            cells.push(<div className="innerDiv" style={{backgroundColor: color}} key={cellId} id={cellId}><input type="number" autoComplete="new-password" id={inputId} onChange={update} style={{maxWidth: "100%"}} /></div>)
         }
         return cells
     }
@@ -106,12 +110,11 @@ export default function ScoresDiv() {
                 }  else if(playerScores[i][j] < 0) {
                     playerSum += playerScores[i][j]
                 }
-                console.log(`reading: ${playerScores[i][j]}`)
+                // console.log(`reading: ${playerScores[i][j]}`)
             }
             newTotals[i] = playerSum
         }
         setPlayerTotals(newTotals)
-
     }, [playerScores])
 
     return(
@@ -120,7 +123,7 @@ export default function ScoresDiv() {
                 <div style={{textAlign: "center", fontFamily: "sans-serif", width: "17%", display: "flex", justifyContent: "center", fontSize: '1.5rem'}}>
                     <p style={{margin: "auto 0"}}>Names:</p>
                 </div>
-                <div className='cellsContainer'>{buildNames}</div>
+                <div className="cellsContainer">{buildNames()}</div>
             </div>
                     <div className="board">
                         <div className="icons" style={{backgroundImage: "url(" + red + ")"}}></div>
