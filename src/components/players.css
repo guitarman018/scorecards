@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+
 .hide {
     visibility: hidden;
+}
+
+.playersH1 {
+    font-size: 3em;
+    margin: 3vh;
+    text-align: center;
 }
 
 .main {
@@ -15,28 +22,45 @@
     height: 100vh;
 }
 
-.contents {
-    display: block;
-
-    margin: auto;
+.divInput {
+    display: flex;
+    justify-content: center;
 }
 
+#numPlayersInput {
+    font-size: 4em;
+    width: 20vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+
+}
+
+.divButton {
+    display: flex;
+    justify-content: center;
+}
+
+#btnGo {
+    margin: 4vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    padding: 10px;
+    border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
 .numPlayers {
     margin: 0 auto;
     height: 5vh;
     width: 100%;
     display: flex;
     justify-content: center;
-}
-h2 {
-    margin: auto 0;
+    font-size: 3vw;
 }
 .inputPlayers {
     display: flex;
     justify-content: center;
 }
 #numPlayersInput {
-    width: 10vw;
+    width: 20vw;
     border: 2px solid black;
 }
 .buttonDiv {
@@ -44,9 +68,6 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-#btnGo {
-    margin-left: 20px;
 }
 #wrong {
     display: flex;

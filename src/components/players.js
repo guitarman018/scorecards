@@ -30,13 +30,15 @@ export default function Players() {
 
         <div className="main">
           <div className="contents">
-            <div className="numPlayers"><h1>How many players are there?</h1></div>
-            <div className="inputPlayers">
+            <h1 className="playersH1">How many players are there?</h1>
+            <div className="divInput">
               <input type="number" id="numPlayersInput" placeholder="2-7" onChange={(e) => setNum(e.target.value)} />
+            </div>
+            <div className="divButton">
               <button onClick={checkNum} id="btnGo">Play!</button>
             </div>
             <div className={hide} id="wrong">
-                <span style={{color: 'red', fontSize: 20, fontWeight: "bold"}}>Number must be between 2 and 7</span>
+                <span style={{color: 'red', fontSize: "3em", textAlign: "center", fontWeight: "bold"}}>Number must be between 2 and 7</span>
             </div>
           </div>
         </div>

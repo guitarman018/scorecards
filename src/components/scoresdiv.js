@@ -13,7 +13,9 @@ import sum from "../images/8-sum.jpg"
 
 export default function ScoresDiv() {
 
-    let players = 6
+    let gotten = localStorage.getItem("numPlayers")
+    let numGotten = parseInt(gotten)
+    let players = numGotten
 
     const [playerScores, setPlayerScores] = useState(Array(players).fill(0).map(row => new Array(7).fill(0)))
     const [playerTotals, setPlayerTotals] = useState(Array(players).fill(0))
