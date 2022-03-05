@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import "./scoresdiv.css"
+import Modal from "./Modal";
+import useModal from './useModal';
 
 import red from "../images/1-red.jpg"
 import coin from "../images/2-coin.jpg"
@@ -16,6 +18,7 @@ export default function ScoresDiv() {
     let gotten = localStorage.getItem("numPlayers")
     let numGotten = parseInt(gotten)
     let players = numGotten
+    const {isShowing, toggle} = useModal();
 
     const [playerScores, setPlayerScores] = useState(Array(players).fill(0).map(row => new Array(7).fill(0)))
     const [playerTotals, setPlayerTotals] = useState(Array(players).fill(0))
@@ -95,7 +98,7 @@ export default function ScoresDiv() {
         let sumCells = []
         for (let i = 1; i <= players; i++) {
             let cellId = `cell${i}-row${rowNum}`
-            sumCells.push(<div style={sumStyle} className="finalScores innerDiv" key={cellId} id={cellId}>{playerTotals[i-1]}</div>)
+            sumCells.push(<div style={sumStyle} className={`finalScores innerDiv`} key={cellId} id={cellId}>{playerTotals[i-1]}</div>)
         }
         return sumCells
     }
@@ -159,6 +162,11 @@ export default function ScoresDiv() {
                         <div className="icons" style={{backgroundColor: "#000", display: "flex", justifyContent: "center"}}><img className="noStretch" src={sum}/></div>
                         <div class="cellsContainer">{buildSums(8)}</div>          
                     </div>
+                    <div className="divButton">
+                         <button className="button-default" onClick={toggle}>Show Modal</button>
+                             <Modal isShowing={isShowing} hide={toggle}/>
+                    </div>
+                    
         </div>
     )
 
