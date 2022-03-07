@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import "./scoresdiv.css"
-import Modal from "./Modal";
-import useModal from './useModal';
 
 import red from "../images/1-red.jpg"
 import coin from "../images/2-coin.jpg"
@@ -12,13 +10,16 @@ import yellow from "../images/5-yellow.jpg"
 import purple from "../images/6-purple.jpg"
 import green from "../images/7-green.jpg"
 import sum from "../images/8-sum.jpg"
+import { Navigate } from "react-router-dom";
 
 export default function ScoresDiv() {
+
+    const navigate = useNavigate();
 
     let gotten = localStorage.getItem("numPlayers")
     let numGotten = parseInt(gotten)
     let players = numGotten
-    const {isShowing, toggle} = useModal();
+
 
     const [playerScores, setPlayerScores] = useState(Array(players).fill(0).map(row => new Array(7).fill(0)))
     const [playerTotals, setPlayerTotals] = useState(Array(players).fill(0))
@@ -30,14 +31,6 @@ export default function ScoresDiv() {
         alignItems: "center",
         margin: "0 auto"   
     }
-
-    const bgRed ={  
-        
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-      }
-
 
     function update(e){
         
@@ -66,15 +59,18 @@ export default function ScoresDiv() {
                 } else if(playerScores[i][j] <= 0 && playerScores[i][j] != "") {
                     playerSum += playerScores[i][j]
                 }
-                // console.log(`reading: ${playerScores[i][j]}`)
-
             }
             newTotals[i] = playerSum
         }
         setPlayerTotals(newTotals)
+    }
 
-        
-
+    function makeSure() {
+        if (window.confirm("Are you sure you want to leave the game?")) {
+            navigate('/')
+        } else {
+            console.log('staying')
+        }
     }
 
     function buildNames() {
@@ -163,8 +159,7 @@ export default function ScoresDiv() {
                         <div class="cellsContainer">{buildSums(8)}</div>          
                     </div>
                     <div className="divButton">
-                         <button className="button-default" onClick={toggle}>Show Modal</button>
-                             <Modal isShowing={isShowing} hide={toggle}/>
+                         <button className="button-default" onClick={makeSure}>Exit game</button>
                     </div>
                     
         </div>
